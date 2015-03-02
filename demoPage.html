@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>
+Html 5 page
+</title>
+<style>
+div {
+	width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    -webkit-animation: myfirst 5s infinite; /* Chrome, Safari, Opera */
+	-webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+}
+	/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+	0%   {background: red; left: 0px; top: 0px;}
+    25%  {background: yellow; left: 200px; top: 0px;}
+    50%  {background: blue; left: 200px; top: 200px;}
+    75%  {background: green; left: 0px; top: 200px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+</style>
+</head>
+<body>
+<h1>
+Demo Page
+</h1>
+<table>
+  <tr>
+	<td>
+		<nav>
+			<ul>
+			<li> Item1</li>
+			<li> Itme2</li>
+			</ul>
+		</nav>
+	</td>
+	<td>
+	  <article>
+  	    <header>
+		<h1> The big heading</h1>
+		<h3> Sub heading</h3>
+	    </header>	    
+	 <section> The content of the article goes here
+	<aside> Highlighted text within the data context</aside>
+	</section>
+	<footer> <h4>the footer text goes here</h4>
+	</footer>
+	  </article>
+	</td>
+		<button onclick="shrink()">Shrink</button>
+		<button onclick="grow()">Grow</button>
+		<script>
+			function shrink(){
+				var obj = document.getElementById('logo1');
+				var obj2 = document.getElementById('logo2');
+				var width = obj.width;
+				var height = obj.height;
+				
+				obj2.height = obj.height = height-10;
+				obj2.width = obj.width = width-10;
+			}
+			function grow(){
+				var obj = document.getElementById('logo1');
+				var obj2 = document.getElementById('logo2');
+				var width = obj.width;
+				var height = obj.height;
+				
+				obj2.height = obj.height = height+10;
+				obj2.width = obj.width = width+10;
+			}
+		</script>
+		<figure>
+			<img id="logo1" src="HTML5-logo.svg" alt="The HTML-logo" width="304" height="228">
+			<figcaption>Fig.1 - A HTML v5.0 Logo.</figcaption>
+		</figure>
+	</td>
+	<td>
+		 <figure>
+			<img id="logo2" src="HTML5.png" alt="The HTML-logo" width="304" height="228">
+			<figcaption>Fig.1 - A HTML v5.0 Logo.</figcaption>
+		</figure>
+	</td>
+	<td>
+			Video download Progess:
+			<progress id = "prog1" value="22" max="100"></progress>
+			<button onclick="MoveProgress()">MoveProgress</button>
+			<script>
+				function MoveProgress(){
+				var obj = document.getElementById('prog1');
+				obj.value = obj.value+10;
+				}
+			</script>
+		  </td>
+		  <td>
+			  <p>Display a gauge:</p>
+				<meter value="2" min="0" max="10">2 out of 10</meter><br>
+				<meter value="0.6">60%</meter>
+		  </td>
+  </tr>
+  <tr>
+	<td>
+		<div><div>
+	<td>
+  </tr>
+</table>
+</body>
+</html>

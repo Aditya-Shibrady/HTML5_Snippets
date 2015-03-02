@@ -1,0 +1,89 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>
+		Html 5 Form application page
+	</title>
+</head>
+<body>
+	<h1> Please provide your basic details</h1>
+	<table>
+		<tr>
+			<td valign="top">
+				<Article>
+					<header>
+						<p>Welcome Mr/Ms. : <div id="appName"></div> to the Online demo page.<p>
+					</header>
+					<section>
+						<p> Is this where you live :<div id="appAddress"></div> Mr/Ms. : <div id="appName"></div> ?</p>
+						<p> We belive your Phone number is :<div id="appPhone"></div>. Can you confirm the above mentioned detailsa are valid?</p>
+					</section>"
+					<footer>
+					</footer>
+				</Article>
+			</td>
+			<td valign="top">
+				Current Progress: <progress id="prog1" value="0" max="100"></progress>
+				<br>
+				<br>
+				<table>
+					<tr>
+						<td>
+							Name of the applicant:
+							<input type="text" id="appNametxt" onchange="MoveProgress()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Address of the applicant:
+							<input type="text" id="appAddtxt" onchange="MoveProgress()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Phone number of the applicant:
+							<input type="text" id="appPhonetxt" onchange="MoveProgress()">
+						</td>
+					</tr>
+				</table>
+				<button onclick="populateData()">Populate data</button>
+			</td>
+		</tr>
+	</table>
+	<script>
+		function MoveProgress()
+		{
+		var progress = document.getElementById("prog1");
+			var obj = document.getElementById("appNametxt").value;
+			if(obj.length >5){
+				progress.value= 33;
+			}
+			obj = document.getElementById("appAddtxt").value;
+			if(obj.length > 5){
+				progress.value= 66;
+			}
+			obj = document.getElementById("appPhonetxt").value;
+			if(obj.length > 5){
+				progress.value= 100;
+			}
+		}
+		
+		function populateData()
+		{
+		var obj = document.getElementById("appNametxt").value;
+			if(obj.length >5){
+				document.getElementById("appName").innerHTML = obj;
+			}
+			obj = document.getElementById("appAddtxt").value;
+			if(obj.length > 5){
+				document.getElementById("appAddress").innerHTML = obj;
+			}
+			obj = document.getElementById("appPhonetxt").value;
+			if(obj.length > 5){
+				document.getElementById("appPhone").innerHTML = obj;
+			}
+		}
+		
+	</script>
+</body>
+</html>

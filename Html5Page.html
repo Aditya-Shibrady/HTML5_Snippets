@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+<head>
+	<h1> This is a Html 5 page Sample </h1>
+	<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    -webkit-animation: myfirst 5s infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation: myfirst 5s infinite;
+    animation-direction: alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {background: red; left: 0px; top: 0px;}
+    25%  {background: yellow; left: 200px; top: 0px;}
+    50%  {background: blue; left: 200px; top: 200px;}
+    75%  {background: green; left: 0px; top: 200px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+
+@keyframes myfirst {
+    0%   {background: red; left: 0px; top: 0px;}
+    25%  {background: yellow; left: 200px; top: 0px;}
+    50%  {background: blue; left: 200px; top: 200px;}
+    75%  {background: green; left: 0px; top: 200px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+</style>
+</head>
+<body>
+<header background-color="Blue" height="200px" width="200px" >
+	
+</header>
+	
+<body>
+<table>
+<nav>
+	  <tr >
+		<td valign = top> 
+		<table>
+		<tr><td><a href="http://www.html-5-tutorial.com/">home</a></td></tr>
+		<tr><td><a href="http://www.html-5-tutorial.com/">Canvas</a></td></tr>
+		<tr><td><a href="http://www.html-5-tutorial.com/">Article</a></td></tr>
+		<tr><td><a href="http://www.html-5-tutorial.com/">home</a></td></tr>
+		</table>
+		</td>
+</nav>
+<td>
+<article>
+  <header>
+    <h1>Most important heading here</h1>
+    <h3>Less important heading here</h3>
+    <p>Some additional information here.</p>
+      Along with the sample text i'm also adding the below
+        <ul>
+           <li> One </li>
+        </ul>
+		<ol>
+	<section>
+	Here is a sample of ordered list items as well
+		<li> Walmart </li>
+		<li> Tom thumb </li>
+		<li> Krogger </li>
+		</ol>
+		</section>
+		
+  </header>
+  <p>Lorem Ipsum dolor set amet....</p>
+  <footer>
+    <h5> Footer content</h5>
+  </footer>
+</article>
+</td>
+<td>
+<button onclick="shrink()">Smaller</button>
+<button onclick="grow()">Bigger</button>
+<script>
+
+function shrink(){
+	var obj = document.getElementById("logo");
+	var width = obj.width;
+	var height = obj.height;
+	obj.width= width-10;
+	obj.height= height-10;
+}
+
+function grow(){
+var obj = document.getElementById("logo");
+	var width = obj.width;
+	var height = obj.height;
+	obj.width= width+10;
+	obj.height= height+10;
+}
+
+</script>
+<figure>
+  <img id="logo" src="HTML5-logo.svg" alt="The HTML-logo" width="304" height="228">
+  <figcaption>Fig.1 - A HTML v5.0 Logo.</figcaption>
+</figure>
+</td>
+<td>
+<div></div>
+</td>
+	  </tr>
+	  <tr>
+		  <td>
+			<video width="320" height="240" controls>
+				<source src="HTML5Video.flv" type="video/flv">
+				<source src="HTML5Video.3gp" type="video/3gp">
+				Your browser does not support the video tag.
+			</video>
+		  </td>
+		  <td>
+			Video download Progess:
+			<progress value="22" max="100"></progress>
+		  </td>
+		  <td>
+			  <p>Display a gauge:</p>
+				<meter value="2" min="0" max="10">2 out of 10</meter><br>
+				<meter value="0.6">60%</meter>
+		  </td>
+	  </tr>
+</table>
+</html>

@@ -1,0 +1,144 @@
+<!doctype>
+<html>
+<head>
+<title>
+HTML 5 Page
+</title>
+<style>
+	div {
+	height:200px;
+	width:200px;
+	background: red;
+	position: relative;
+	-webkit-animation: myfirst 5s infinite;
+	-webkit-animation-direction: alternate;
+	@webkit-keyframes myfirst {
+	0% {background: red;}
+	25% {background: yellow;}
+	50% {background: green;}
+	}
+</style>
+</head>
+<body>
+<h1>Hello</<h1>
+
+<table>
+	<tr>
+		<td>
+			<nav>
+				<ul>
+				<li>Item1</li>
+				<li>Item2</li>
+				</ul>
+			</nav>
+		</td>
+		<td>			
+			<article>
+				<header>
+					<h1>Heading</h1>
+					<h3>Sub Heading</h3>
+				</header>
+				<section>
+					Section Comments.
+					<aside>
+						Asidinngng text.
+					</aside>
+				</section>
+				<footer>
+				This is Footer.
+				</footer>
+			</article>
+		</td>
+		<td>
+		
+			<button onclick="shrink()">Shrink</button>
+			<button onclick="grow()">grow</button>
+			<script>
+				function shrink(){
+					var obj = document.getElementById('logo1');
+					var obj2 = document.getElementById('logo2');
+					var width=obj.width;
+					var height=obj.height;
+					obj.height = height-10;
+					obj2.height= obj.height = height-10;
+					obj.width = width-10;
+					obj2.width =obj.width = width-10;
+					}
+				function grow(){
+					var obj = document.getElementById('logo1');
+					var obj2 = document.getElementById('logo2');
+					var width=obj.width;
+					var height=obj.height;
+					obj.height = height+10;
+					obj2.height= obj.height = height+10;
+					obj.width = width+10;
+					obj2.width =obj.width = width+10;
+					}
+			</script>	
+			<figure>
+				<img id="logo1" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" height="150" width="120">
+				<!--<figcaption>Andy</figcaption>-->
+			</figure>
+		</td>
+		<td>
+			<figure>
+				<img id="logo2" src="http://img4.wikia.nocookie.net/__cb20130422194949/fringe/de/images/d/df/Microsoft_windows_8_logo_by_n_studios_2-d5keldy.png" height="150" width="120">
+				<!--<figcaption>Andy</figcaption>-->
+			</figure>
+		</td>
+		<td>
+			Video Download Progress
+			<progress>
+		</td>
+		<td>
+		<article>
+		<label>Your input: </label>
+		<p><span id='display'></span> </p>
+		</article>
+		<form name="frm1">
+		Name:<br>
+		<input type="text" name="nm" id="user_input">
+		<br>			
+		</form>
+		<input type="button" value="Copy" onclick="myFunction();">
+		<script>
+			function myFunction() {
+			var message_entered =  document.getElementById("user_input").value;
+
+			document.getElementById('display').innerHTML = message_entered;
+			}
+		</script>
+		</td>
+	</tr>
+</table>
+<canvas id="spinner"></canvas>
+<script>
+var canvas = document.getElementById('spinner');
+var context = canvas.getContext('2d');
+var start = new Date();
+var lines = 16,  
+    cW = context.canvas.width,
+    cH = context.canvas.height;
+
+var draw = function() {
+    var rotation = parseInt(((new Date() - start) / 1000) * lines) / lines;
+    context.save();
+    context.clearRect(0, 0, cW, cH);
+    context.translate(cW / 2, cH / 2);
+    context.rotate(Math.PI * 2 * rotation);
+    for (var i = 0; i < lines; i++) {
+
+        context.beginPath();
+        context.rotate(Math.PI * 2 / lines);
+        context.moveTo(cW / 10, 0);
+        context.lineTo(cW / 4, 0);
+        context.lineWidth = cW / 30;
+        context.strokeStyle = "rgba(0, 0, 0," + i / lines + ")";
+        context.stroke();
+    }
+    context.restore();
+};
+window.setInterval(draw, 1000 / 30);
+</script>
+</body>
+</html>
